@@ -9,6 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+      - name: install deps
+        run: npm ci
       - name: run deploy
         run: npm run deploy
   
